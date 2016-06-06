@@ -12,7 +12,7 @@
 namespace Tymon\JWTAuth;
 
 use BadMethodCallException;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Tymon\JWTAuth\Http\Parser\Parser;
 use Tymon\JWTAuth\Support\CustomClaims;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -245,7 +245,7 @@ class JWT
     /**
      * Set the request instance.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      *
      * @return $this
      */

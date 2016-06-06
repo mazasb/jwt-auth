@@ -11,14 +11,14 @@
 
 namespace Tymon\JWTAuth\Contracts\Http;
 
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 
 interface Parser
 {
     /**
      * Parse the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      *
      * @return null|string
      */

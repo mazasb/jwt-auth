@@ -11,8 +11,8 @@
 
 namespace Tymon\JWTAuth\Http\Middleware;
 
+use Symfony\Component\HttpFoundation\Request;
 use Tymon\JWTAuth\JWTAuth;
-use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
@@ -39,7 +39,7 @@ abstract class BaseMiddleware
     /**
      * Check the request for the presence of a token.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      *
      * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
      *
@@ -55,7 +55,7 @@ abstract class BaseMiddleware
     /**
      * Attempt to authenticate a user via the token in the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      *
      * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      *

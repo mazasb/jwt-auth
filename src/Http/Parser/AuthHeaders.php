@@ -11,7 +11,7 @@
 
 namespace Tymon\JWTAuth\Http\Parser;
 
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Tymon\JWTAuth\Contracts\Http\Parser as ParserContract;
 
 class AuthHeaders implements ParserContract
@@ -33,7 +33,7 @@ class AuthHeaders implements ParserContract
     /**
      * Attempt to parse the token from some other possible headers.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      *
      * @return null|string
      */
@@ -45,7 +45,7 @@ class AuthHeaders implements ParserContract
     /**
      * Try to parse the token from the request header.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      *
      * @return null|string
      */

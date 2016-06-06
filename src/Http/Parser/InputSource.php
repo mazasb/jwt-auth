@@ -11,7 +11,7 @@
 
 namespace Tymon\JWTAuth\Http\Parser;
 
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Tymon\JWTAuth\Contracts\Http\Parser as ParserContract;
 
 class InputSource implements ParserContract
@@ -26,13 +26,13 @@ class InputSource implements ParserContract
     /**
      * Try to parse the token from the request input source.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      *
      * @return null|string
      */
     public function parse(Request $request)
     {
-        return $request->input($this->key);
+        return $request->request->get($this->key);
     }
 
     /**

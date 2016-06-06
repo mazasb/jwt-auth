@@ -12,7 +12,7 @@
 namespace Tymon\JWTAuth;
 
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Tymon\JWTAuth\Support\Utils;
 use Illuminate\Support\Collection;
 use Tymon\JWTAuth\Support\RefreshFlow;
@@ -30,7 +30,7 @@ class Factory
     protected $claimFactory;
 
     /**
-     * @var \Illuminate\Http\Request
+     * @var \Symfony\Component\HttpFoundation\Request
      */
     protected $request;
 
@@ -56,7 +56,7 @@ class Factory
 
     /**
      * @param  \Tymon\JWTAuth\Claims\Factory  $claimFactory
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      * @param  \Tymon\JWTAuth\Validators\PayloadValidator  $validator
      *
      * @return void
@@ -167,7 +167,7 @@ class Factory
      */
     public function iss()
     {
-        return $this->request->url();
+        return $this->request->getSchemeAndHttpHost().$this->request->getBaseUrl().$this->request->getPathInfo();
     }
 
     /**
@@ -213,7 +213,7 @@ class Factory
     /**
      * Set the request instance.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      *
      * @return $this
      */

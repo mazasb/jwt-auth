@@ -20,9 +20,9 @@
     ],
     "require": {
         "php": "^5.5.9 || ^7.0",
-        "illuminate/auth": "5.1.* || 5.2.*",
+        "symfony/http-foundation": "~2.8 || ~3.0",
+        "symfony/http-kernel": "~2.8 || ~3.0",
         "illuminate/contracts": "5.1.* || 5.2.*",
-        "illuminate/http": "5.1.* || 5.2.*",
         "illuminate/support": "5.1.* || 5.2.*",
         "namshi/jose": "^7.0",
         "nesbot/carbon": "^1.0"
@@ -31,7 +31,6 @@
         "cartalyst/sentinel": "2.0.*",
         "illuminate/console": "5.1.* || 5.2.*",
         "illuminate/database": "5.1.* || 5.2.*",
-        "illuminate/routing": "5.1.* || 5.2.*",
         "mockery/mockery": "0.9.*",
         "october/rain": "dev-develop",
         "phpunit/phpunit": "^4.0 || ^5.0"

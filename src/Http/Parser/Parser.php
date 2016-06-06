@@ -11,7 +11,7 @@
 
 namespace Tymon\JWTAuth\Http\Parser;
 
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 
 class Parser
 {
@@ -21,12 +21,12 @@ class Parser
     private $chain;
 
     /**
-     * @var \Illuminate\Http\Request
+     * @var \Symfony\Component\HttpFoundation\Request
      */
     protected $request;
 
     /**
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      * @param  array  $chain
      *
      * @return void
@@ -103,7 +103,7 @@ class Parser
     /**
      * Set the request instance.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Symfony\Component\HttpFoundation\Request  $request
      *
      * @return $this
      */
