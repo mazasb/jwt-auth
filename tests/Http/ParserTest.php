@@ -176,10 +176,6 @@ class ParserTest extends AbstractTestCase
     public function it_should_ignore_routeless_requests()
     {
         $request = Request::create('foo', 'GET', ['foo' => 'bar']);
-        //TODO: It should be refactor if it needs
-//        $request->setRouteResolver(function () {
-//            //
-//        });
 
         $parser = new Parser($request);
         $parser->setChain([
@@ -195,10 +191,7 @@ class ParserTest extends AbstractTestCase
     public function it_should_return_null_if_no_token_in_request()
     {
         $request = Request::create('foo', 'GET', ['foo' => 'bar']);
-        //TODO: It should be refactor if it needs
-//        $request->setRouteResolver(function () {
-//            return $this->getRouteMock();
-//        });
+        $request = $this->getRouteMock();
 
         $parser = new Parser($request);
         $parser->setChain([
