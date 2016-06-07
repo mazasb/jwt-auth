@@ -13,7 +13,7 @@ namespace Tymon\JWTAuth\Test\Middleware;
 
 use Mockery;
 use Tymon\JWTAuth\JWTAuth;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Tymon\JWTAuth\Http\Parser\Parser;
 use Tymon\JWTAuth\Test\Stubs\UserStub;
 use Tymon\JWTAuth\Test\AbstractTestCase;

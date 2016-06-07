@@ -13,8 +13,8 @@ namespace Middleware;
 
 use Mockery;
 use Tymon\JWTAuth\JWTAuth;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Tymon\JWTAuth\Http\Parser\Parser;
 use Tymon\JWTAuth\Test\AbstractTestCase;
 use Tymon\JWTAuth\Http\Middleware\RefreshToken;
@@ -28,7 +28,7 @@ class RefreshTokenTest extends AbstractTestCase
     protected $auth;
 
     /**
-     * @var \Mockery\MockInterface|\Illuminate\Http\Request
+     * @var \Mockery\MockInterface|\Symfony\Component\HttpFoundation\Request
      */
     protected $request;
 

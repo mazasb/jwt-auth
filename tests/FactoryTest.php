@@ -14,7 +14,7 @@ namespace Tymon\JWTAuth\Test;
 use Mockery;
 use Tymon\JWTAuth\Factory;
 use Tymon\JWTAuth\Payload;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Tymon\JWTAuth\Claims\JwtId;
 use Tymon\JWTAuth\Claims\Custom;
 use Tymon\JWTAuth\Claims\Issuer;
