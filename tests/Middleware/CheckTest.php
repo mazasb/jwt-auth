@@ -13,7 +13,7 @@ namespace Tymon\JWTAuth\Test\Middleware;
 
 use Mockery;
 use Tymon\JWTAuth\JWTAuth;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Tymon\JWTAuth\Http\Parser\Parser;
 use Tymon\JWTAuth\Test\Stubs\UserStub;
 use Tymon\JWTAuth\Http\Middleware\Check;
@@ -28,7 +28,7 @@ class CheckTest extends AbstractTestCase
     protected $auth;
 
     /**
-     * @var \Mockery\MockInterface|\Illuminate\Http\Request
+     * @var \Mockery\MockInterface|\Symfony\Component\HttpFoundation\Request
      */
     protected $request;
 
