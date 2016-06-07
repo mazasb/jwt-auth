@@ -191,7 +191,6 @@ class ParserTest extends AbstractTestCase
     public function it_should_return_null_if_no_token_in_request()
     {
         $request = Request::create('foo', 'GET', ['foo' => 'bar']);
-        $request = $this->getRouteMock();
 
         $parser = new Parser($request);
         $parser->setChain([
