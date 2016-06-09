@@ -9,37 +9,37 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test;
+namespace JWTAuth\Test;
 
 use Mockery;
-use Tymon\JWTAuth\Factory;
-use Tymon\JWTAuth\Payload;
+use JWTAuth\Factory;
+use JWTAuth\Payload;
 use Symfony\Component\HttpFoundation\Request;
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Claims\Custom;
-use Tymon\JWTAuth\Claims\Issuer;
-use Tymon\JWTAuth\Claims\Subject;
-use Tymon\JWTAuth\Claims\IssuedAt;
+use JWTAuth\Claim\JwtId;
+use JWTAuth\Claim\Custom;
+use JWTAuth\Claim\Issuer;
+use JWTAuth\Claim\Subject;
+use JWTAuth\Claim\IssuedAt;
 use Illuminate\Support\Collection;
-use Tymon\JWTAuth\Claims\NotBefore;
-use Tymon\JWTAuth\Claims\Expiration;
-use Tymon\JWTAuth\Validators\PayloadValidator;
-use Tymon\JWTAuth\Claims\Factory as ClaimFactory;
+use JWTAuth\Claim\NotBefore;
+use JWTAuth\Claim\Expiration;
+use JWTAuth\Validators\PayloadValidator;
+use JWTAuth\Claim\Factory as ClaimFactory;
 
 class FactoryTest extends AbstractTestCase
 {
     /**
-     * @var \Mockery\MockInterface|\Tymon\JWTAuth\Claims\Factory
+     * @var \Mockery\MockInterface|\JWTAuth\Claim\Factory
      */
     protected $claimFactory;
 
     /**
-     * @var \Mockery\MockInterface|\Tymon\JWTAuth\Validators\PayloadValidator
+     * @var \Mockery\MockInterface|\JWTAuth\Validators\PayloadValidator
      */
     protected $validator;
 
     /**
-     * @var \Tymon\JWTAuth\Factory
+     * @var \JWTAuth\Factory
      */
     protected $factory;
 

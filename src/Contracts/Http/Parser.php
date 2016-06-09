@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Contracts\Http;
+namespace JWTAuth\Contracts\Http;
 
 use Symfony\Component\HttpFoundation\Request;
 

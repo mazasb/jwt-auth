@@ -9,22 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace JWTAuth;
 
-use Tymon\JWTAuth\Http\Parser\Parser;
-use Tymon\JWTAuth\Contracts\Providers\Auth;
+use JWTAuth\Http\Parser\Parser;
+use JWTAuth\Contracts\Providers\Auth;
 
 class JWTAuth extends JWT
 {
     /**
-     * @var \Tymon\JWTAuth\Contracts\Providers\Auth
+     * @var \JWTAuth\Contracts\Providers\Auth
      */
     protected $auth;
 
     /**
-     * @param  \Tymon\JWTAuth\Manager  $manager
-     * @param  \Tymon\JWTAuth\Contracts\Providers\Auth  $auth
-     * @param  \Tymon\JWTAuth\Http\Parser\Parser  $parser
+     * @param  \JWTAuth\Manager  $manager
+     * @param  \JWTAuth\Contracts\Providers\Auth  $auth
+     * @param  \JWTAuth\Http\Parser\Parser  $parser
      *
      * @return void
      */
@@ -53,7 +53,7 @@ class JWTAuth extends JWT
     /**
      * Authenticate a user via a token.
      *
-     * @return \Tymon\JWTAuth\Contracts\JWTSubject|false
+     * @return \JWTAuth\Contracts\JWTSubject|false
      */
     public function authenticate()
     {
@@ -69,7 +69,7 @@ class JWTAuth extends JWT
     /**
      * Alias for authenticate().
      *
-     * @return \Tymon\JWTAuth\Contracts\JWTSubject|false
+     * @return \JWTAuth\Contracts\JWTSubject|false
      */
     public function toUser()
     {
@@ -79,7 +79,7 @@ class JWTAuth extends JWT
     /**
      * Get the authenticated user.
      *
-     * @return \Tymon\JWTAuth\Contracts\JWTSubject
+     * @return \JWTAuth\Contracts\JWTSubject
      */
     public function user()
     {

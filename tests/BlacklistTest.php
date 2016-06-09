@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test;
+namespace JWTAuth\Test;
 
 use Mockery;
-use Tymon\JWTAuth\Payload;
-use Tymon\JWTAuth\Blacklist;
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Claims\Issuer;
-use Tymon\JWTAuth\Claims\Subject;
-use Tymon\JWTAuth\Claims\IssuedAt;
+use JWTAuth\Payload;
+use JWTAuth\Blacklist;
+use JWTAuth\Claim\JwtId;
+use JWTAuth\Claim\Issuer;
+use JWTAuth\Claim\Subject;
+use JWTAuth\Claim\IssuedAt;
 use Illuminate\Support\Collection;
-use Tymon\JWTAuth\Claims\NotBefore;
-use Tymon\JWTAuth\Claims\Expiration;
-use Tymon\JWTAuth\Contracts\Providers\Storage;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use JWTAuth\Claim\NotBefore;
+use JWTAuth\Claim\Expiration;
+use JWTAuth\Contracts\Providers\Storage;
+use JWTAuth\Validators\PayloadValidator;
 
 class BlacklistTest extends AbstractTestCase
 {
@@ -32,7 +32,7 @@ class BlacklistTest extends AbstractTestCase
     protected $storage;
 
     /**
-     * @var \Tymon\JWTAuth\Blacklist
+     * @var \JWTAuth\Blacklist
      */
     protected $blacklist;
 

@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test;
+namespace JWTAuth\Test;
 
 use Mockery;
-use Tymon\JWTAuth\Payload;
-use Tymon\JWTAuth\Claims\Claim;
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Claims\Issuer;
-use Tymon\JWTAuth\Claims\Subject;
+use JWTAuth\Payload;
+use JWTAuth\Claim\Claim;
+use JWTAuth\Claim\JwtId;
+use JWTAuth\Claim\Issuer;
+use JWTAuth\Claim\Subject;
 use Illuminate\Support\Collection;
-use Tymon\JWTAuth\Claims\Audience;
-use Tymon\JWTAuth\Claims\IssuedAt;
-use Tymon\JWTAuth\Claims\NotBefore;
-use Tymon\JWTAuth\Claims\Expiration;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use JWTAuth\Claim\Audience;
+use JWTAuth\Claim\IssuedAt;
+use JWTAuth\Claim\NotBefore;
+use JWTAuth\Claim\Expiration;
+use JWTAuth\Validators\PayloadValidator;
 
 class PayloadTest extends AbstractTestCase
 {
@@ -32,7 +32,7 @@ class PayloadTest extends AbstractTestCase
     protected $validator;
 
     /**
-     * @var \Tymon\JWTAuth\Payload
+     * @var \JWTAuth\Payload
      */
     protected $payload;
 
@@ -64,7 +64,7 @@ class PayloadTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\PayloadException
+     * @expectedException \JWTAuth\Exceptions\PayloadException
      */
     public function it_should_throw_an_exception_when_trying_to_add_to_the_payload()
     {
@@ -73,7 +73,7 @@ class PayloadTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\PayloadException
+     * @expectedException \JWTAuth\Exceptions\PayloadException
      */
     public function it_should_throw_an_exception_when_trying_to_remove_a_key_from_the_payload()
     {

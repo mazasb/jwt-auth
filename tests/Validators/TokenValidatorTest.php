@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Validators;
+namespace JWTAuth\Test\Validators;
 
-use Tymon\JWTAuth\Test\AbstractTestCase;
-use Tymon\JWTAuth\Validators\TokenValidator;
+use JWTAuth\Test\AbstractTestCase;
+use JWTAuth\Validators\TokenValidator;
 
 class TokenValidatorTest extends AbstractTestCase
 {
     /**
-     * @var \Tymon\JWTAuth\Validators\TokenValidator
+     * @var \JWTAuth\Validators\TokenValidator
      */
     protected $validator;
 
@@ -49,7 +49,7 @@ class TokenValidatorTest extends AbstractTestCase
 
     /**
      * @test
-     * @dataProvider \Tymon\JWTAuth\Test\Validators\TokenValidatorTest::dataProviderMalformedTokens
+     * @dataProvider \JWTAuth\Test\Validators\TokenValidatorTest::dataProviderMalformedTokens
      *
      * @param  string  $token
      */
@@ -60,10 +60,10 @@ class TokenValidatorTest extends AbstractTestCase
 
     /**
      * @test
-     * @dataProvider \Tymon\JWTAuth\Test\Validators\TokenValidatorTest::dataProviderMalformedTokens
+     * @dataProvider \JWTAuth\Test\Validators\TokenValidatorTest::dataProviderMalformedTokens
      *
      * @param  string  $token
-     * @expectedException \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @expectedException \JWTAuth\Exceptions\TokenInvalidException
      * @expectedExceptionMessage Malformed token
      */
     public function it_should_throw_an_exception_when_providing_a_malformed_token($token)
@@ -82,7 +82,7 @@ class TokenValidatorTest extends AbstractTestCase
 
     /**
      * @test
-     * @dataProvider \Tymon\JWTAuth\Test\Validators\TokenValidatorTest::dataProviderTokensWithWrongSegmentsNumber
+     * @dataProvider \JWTAuth\Test\Validators\TokenValidatorTest::dataProviderTokensWithWrongSegmentsNumber
      *
      * @param  string  $token
      */
@@ -93,10 +93,10 @@ class TokenValidatorTest extends AbstractTestCase
 
     /**
      * @test
-     * @dataProvider \Tymon\JWTAuth\Test\Validators\TokenValidatorTest::dataProviderTokensWithWrongSegmentsNumber
+     * @dataProvider \JWTAuth\Test\Validators\TokenValidatorTest::dataProviderTokensWithWrongSegmentsNumber
      *
      * @param  string  $token
-     * @expectedException \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @expectedException \JWTAuth\Exceptions\TokenInvalidException
      * @expectedExceptionMessage Wrong number of segments
      */
     public function it_should_throw_an_exception_when_providing_a_malformed_token_with_wrong_segments_number($token)

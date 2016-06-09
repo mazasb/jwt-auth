@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Validators;
+namespace JWTAuth\Validators;
 
-use Tymon\JWTAuth\Support\Utils;
-use Tymon\JWTAuth\Exceptions\TokenExpiredException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use JWTAuth\Support\Utils;
+use JWTAuth\Exceptions\TokenExpiredException;
+use JWTAuth\Exceptions\TokenInvalidException;
 
 class PayloadValidator extends Validator
 {
@@ -51,7 +51,7 @@ class PayloadValidator extends Validator
      *
      * @param  array  $payload
      *
-     * @throws \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @throws \JWTAuth\Exceptions\TokenInvalidException
      *
      * @return bool
      */
@@ -69,8 +69,8 @@ class PayloadValidator extends Validator
      *
      * @param  array  $payload
      *
-     * @throws \Tymon\JWTAuth\Exceptions\TokenExpiredException
-     * @throws \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @throws \JWTAuth\Exceptions\TokenExpiredException
+     * @throws \JWTAuth\Exceptions\TokenInvalidException
      *
      * @return bool
      */
@@ -96,7 +96,7 @@ class PayloadValidator extends Validator
      *
      * @param  array  $payload
      *
-     * @throws \Tymon\JWTAuth\Exceptions\TokenExpiredException
+     * @throws \JWTAuth\Exceptions\TokenExpiredException
      *
      * @return bool
      */

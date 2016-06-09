@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Providers\JWT;
+namespace JWTAuth\Providers\JWT;
 
 use Exception;
 use ReflectionClass;
 use Namshi\JOSE\JWS;
 use InvalidArgumentException;
 use Namshi\JOSE\Signer\OpenSSL\PublicKey;
-use Tymon\JWTAuth\Contracts\Providers\JWT;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use JWTAuth\Contracts\Providers\JWT;
+use JWTAuth\Exceptions\JWTException;
+use JWTAuth\Exceptions\TokenInvalidException;
 
 class Namshi extends Provider implements JWT
 {
@@ -47,7 +47,7 @@ class Namshi extends Provider implements JWT
      *
      * @param  array  $payload
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \JWTAuth\Exceptions\JWTException
      *
      * @return string
      */
@@ -67,7 +67,7 @@ class Namshi extends Provider implements JWT
      *
      * @param  string  $token
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \JWTAuth\Exceptions\JWTException
      *
      * @return array
      */

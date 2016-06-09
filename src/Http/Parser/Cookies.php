@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Http\Parser;
+namespace JWTAuth\Http\Parser;
 
 use Symfony\Component\HttpFoundation\Request;
-use Tymon\JWTAuth\Contracts\Http\Parser as ParserContract;
+use JWTAuth\Contracts\Http\Parser as ParserContract;
 
 class Cookies implements ParserContract
 {

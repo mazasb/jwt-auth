@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Providers\JWT;
+namespace JWTAuth\Test\Providers\JWT;
 
 use Mockery;
-use Tymon\JWTAuth\Test\AbstractTestCase;
-use Tymon\JWTAuth\Test\Stubs\JWTProviderStub;
+use JWTAuth\Test\AbstractTestCase;
+use JWTAuth\Test\Stubs\JWTProviderStub;
 
 class ProviderTest extends AbstractTestCase
 {
     /**
-     * @var \Tymon\JWTAuth\Test\Stubs\JWTProviderStub
+     * @var \JWTAuth\Test\Stubs\JWTProviderStub
      */
     protected $provider;
 

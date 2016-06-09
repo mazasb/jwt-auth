@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Claims;
+namespace JWTAuth\Test\Claims;
 
-use Tymon\JWTAuth\Claims\IssuedAt;
-use Tymon\JWTAuth\Test\AbstractTestCase;
+use JWTAuth\Claim\IssuedAt;
+use JWTAuth\Test\AbstractTestCase;
 
 class IssuedAtTest extends AbstractTestCase
 {
@@ -23,7 +23,7 @@ class IssuedAtTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\InvalidClaimException
+     * @expectedException \JWTAuth\Exceptions\InvalidClaimException
      */
     public function it_should_throw_an_exception_when_passing_a_future_timestamp()
     {

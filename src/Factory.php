@@ -9,23 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace JWTAuth;
 
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Request;
-use Tymon\JWTAuth\Support\Utils;
+use JWTAuth\Support\Utils;
 use Illuminate\Support\Collection;
-use Tymon\JWTAuth\Support\RefreshFlow;
-use Tymon\JWTAuth\Support\CustomClaims;
-use Tymon\JWTAuth\Validators\PayloadValidator;
-use Tymon\JWTAuth\Claims\Factory as ClaimFactory;
+use JWTAuth\Support\RefreshFlow;
+use JWTAuth\Support\CustomClaims;
+use JWTAuth\Validators\PayloadValidator;
+use JWTAuth\Claim\Factory as ClaimFactory;
 
 class Factory
 {
     use RefreshFlow, CustomClaims;
 
     /**
-     * @var \Tymon\JWTAuth\Claims\Factory
+     * @var \JWTAuth\Claim\Factory
      */
     protected $claimFactory;
 
@@ -35,7 +35,7 @@ class Factory
     protected $request;
 
     /**
-     * @var \Tymon\JWTAuth\Validators\PayloadValidator
+     * @var \JWTAuth\Validators\PayloadValidator
      */
     protected $validator;
 
@@ -55,9 +55,9 @@ class Factory
     protected $claims;
 
     /**
-     * @param  \Tymon\JWTAuth\Claims\Factory  $claimFactory
+     * @param  \JWTAuth\Claim\Factory  $claimFactory
      * @param  \Symfony\Component\HttpFoundation\Request  $request
-     * @param  \Tymon\JWTAuth\Validators\PayloadValidator  $validator
+     * @param  \JWTAuth\Validators\PayloadValidator  $validator
      *
      * @return void
      */
@@ -73,7 +73,7 @@ class Factory
     /**
      * Create the Payload instance.
      *
-     * @return \Tymon\JWTAuth\Payload
+     * @return \JWTAuth\Payload
      */
     public function make()
     {
@@ -153,7 +153,7 @@ class Factory
      *
      * @param  \Illuminate\Support\Collection  $claims
      *
-     * @return \Tymon\JWTAuth\Payload
+     * @return \JWTAuth\Payload
      */
     public function withClaims(Collection $claims)
     {
@@ -275,7 +275,7 @@ class Factory
     /**
      * Get the PayloadValidator instance.
      *
-     * @return \Tymon\JWTAuth\Validators\PayloadValidator
+     * @return \JWTAuth\Validators\PayloadValidator
      */
     public function validator()
     {

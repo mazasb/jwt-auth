@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Http;
+namespace JWTAuth\Test\Http;
 
 use Mockery;
 //use Illuminate\Http\Request;
 //use Illuminate\Routing\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Tymon\JWTAuth\Http\Parser\Parser;
-use Tymon\JWTAuth\Http\Parser\Cookies;
-use Tymon\JWTAuth\Test\AbstractTestCase;
-use Tymon\JWTAuth\Http\Parser\AuthHeaders;
-use Tymon\JWTAuth\Http\Parser\QueryString;
+use JWTAuth\Http\Parser\Parser;
+use JWTAuth\Http\Parser\Cookies;
+use JWTAuth\Test\AbstractTestCase;
+use JWTAuth\Http\Parser\AuthHeaders;
+use JWTAuth\Http\Parser\QueryString;
 
 class ParserTest extends AbstractTestCase
 {

@@ -9,37 +9,37 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace JWTAuth;
 
 use BadMethodCallException;
 use Symfony\Component\HttpFoundation\Request;
-use Tymon\JWTAuth\Http\Parser\Parser;
-use Tymon\JWTAuth\Support\CustomClaims;
-use Tymon\JWTAuth\Contracts\JWTSubject;
-use Tymon\JWTAuth\Exceptions\JWTException;
+use JWTAuth\Http\Parser\Parser;
+use JWTAuth\Support\CustomClaims;
+use JWTAuth\Contracts\JWTSubject;
+use JWTAuth\Exceptions\JWTException;
 
 class JWT
 {
     use CustomClaims;
 
     /**
-     * @var \Tymon\JWTAuth\Manager
+     * @var \JWTAuth\Manager
      */
     protected $manager;
 
     /**
-     * @var \Tymon\JWTAuth\Http\Parser\Parser
+     * @var \JWTAuth\Http\Parser\Parser
      */
     protected $parser;
 
     /**
-     * @var \Tymon\JWTAuth\Token
+     * @var \JWTAuth\Token
      */
     protected $token;
 
     /**
-     * @param  \Tymon\JWTAuth\Manager  $manager
-     * @param  \Tymon\JWTAuth\Http\Parser\Parser  $parser
+     * @param  \JWTAuth\Manager  $manager
+     * @param  \JWTAuth\Http\Parser\Parser  $parser
      *
      * @return void
      */
@@ -52,7 +52,7 @@ class JWT
     /**
      * Generate a token using the user identifier as the subject claim.
      *
-     * @param  \Tymon\JWTAuth\Contracts\JWTSubject  $user
+     * @param  \JWTAuth\Contracts\JWTSubject  $user
      *
      * @return string
      */
@@ -93,9 +93,9 @@ class JWT
      * Alias to get the payload, and as a result checks that
      * the token is valid i.e. not expired or blacklisted.
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \JWTAuth\Exceptions\JWTException
      *
-     * @return \Tymon\JWTAuth\Payload
+     * @return \JWTAuth\Payload
      */
     public function checkOrFail()
     {
@@ -121,7 +121,7 @@ class JWT
     /**
      * Get the token.
      *
-     * @return \Tymon\JWTAuth\Token|false
+     * @return \JWTAuth\Token|false
      */
     public function getToken()
     {
@@ -139,7 +139,7 @@ class JWT
     /**
      * Parse the token from the request.
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \JWTAuth\Exceptions\JWTException
      *
      * @return $this
      */
@@ -155,7 +155,7 @@ class JWT
     /**
      * Get the raw Payload instance.
      *
-     * @return \Tymon\JWTAuth\Payload
+     * @return \JWTAuth\Payload
      */
     public function getPayload()
     {
@@ -167,7 +167,7 @@ class JWT
     /**
      * Alias for getPayload().
      *
-     * @return \Tymon\JWTAuth\Payload
+     * @return \JWTAuth\Payload
      */
     public function payload()
     {
@@ -177,9 +177,9 @@ class JWT
     /**
      * Create a Payload instance.
      *
-     * @param  \Tymon\JWTAuth\Contracts\JWTSubject  $user
+     * @param  \JWTAuth\Contracts\JWTSubject  $user
      *
-     * @return \Tymon\JWTAuth\Payload
+     * @return \JWTAuth\Payload
      */
     public function makePayload(JWTSubject $user)
     {
@@ -189,7 +189,7 @@ class JWT
     /**
      * Build the claims array and return it.
      *
-     * @param  \Tymon\JWTAuth\Contracts\JWTSubject  $user
+     * @param  \JWTAuth\Contracts\JWTSubject  $user
      *
      * @return array
      */
@@ -205,7 +205,7 @@ class JWT
     /**
      * Set the token.
      *
-     * @param  \Tymon\JWTAuth\Token|string  $token
+     * @param  \JWTAuth\Token|string  $token
      *
      * @return $this
      */
@@ -231,7 +231,7 @@ class JWT
     /**
      * Ensure that a token is available.
      *
-     * @throws \Tymon\JWTAuth\Exceptions\JWTException
+     * @throws \JWTAuth\Exceptions\JWTException
      *
      * @return void
      */
@@ -259,7 +259,7 @@ class JWT
     /**
      * Get the Manager instance.
      *
-     * @return \Tymon\JWTAuth\Manager
+     * @return \JWTAuth\Manager
      */
     public function manager()
     {
@@ -269,7 +269,7 @@ class JWT
     /**
      * Get the Parser instance.
      *
-     * @return \Tymon\JWTAuth\Http\Parser\Parser
+     * @return \JWTAuth\Http\Parser\Parser
      */
     public function parser()
     {
@@ -279,7 +279,7 @@ class JWT
     /**
      * Get the Payload Factory.
      *
-     * @return \Tymon\JWTAuth\Factory
+     * @return \JWTAuth\Factory
      */
     public function factory()
     {
@@ -289,7 +289,7 @@ class JWT
     /**
      * Get the Blacklist.
      *
-     * @return \Tymon\JWTAuth\Blacklist
+     * @return \JWTAuth\Blacklist
      */
     public function blacklist()
     {

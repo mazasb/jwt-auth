@@ -9,22 +9,22 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Claims;
+namespace JWTAuth\Test\Claims;
 
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Claims\Custom;
-use Tymon\JWTAuth\Claims\Issuer;
-use Tymon\JWTAuth\Claims\Factory;
-use Tymon\JWTAuth\Claims\Subject;
-use Tymon\JWTAuth\Claims\IssuedAt;
-use Tymon\JWTAuth\Claims\NotBefore;
-use Tymon\JWTAuth\Claims\Expiration;
-use Tymon\JWTAuth\Test\AbstractTestCase;
+use JWTAuth\Claim\JwtId;
+use JWTAuth\Claim\Custom;
+use JWTAuth\Claim\Issuer;
+use JWTAuth\Claim\Factory;
+use JWTAuth\Claim\Subject;
+use JWTAuth\Claim\IssuedAt;
+use JWTAuth\Claim\NotBefore;
+use JWTAuth\Claim\Expiration;
+use JWTAuth\Test\AbstractTestCase;
 
 class FactoryTest extends AbstractTestCase
 {
     /**
-     * @var \Tymon\JWTAuth\Claims\Factory
+     * @var \JWTAuth\Claim\Factory
      */
     protected $factory;
 

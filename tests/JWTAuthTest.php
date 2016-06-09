@@ -9,41 +9,41 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test;
+namespace JWTAuth\Test;
 
 use Mockery;
 use StdClass;
-use Tymon\JWTAuth\Token;
-use Tymon\JWTAuth\Factory;
-use Tymon\JWTAuth\JWTAuth;
-use Tymon\JWTAuth\Manager;
-use Tymon\JWTAuth\Payload;
+use JWTAuth\Token;
+use JWTAuth\Factory;
+use JWTAuth\JWTAuth;
+use JWTAuth\Manager;
+use JWTAuth\Payload;
 use Symfony\Component\HttpFoundation\Request;
-use Tymon\JWTAuth\Http\Parser\Parser;
-use Tymon\JWTAuth\Test\Stubs\UserStub;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Contracts\Providers\Auth;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use JWTAuth\Http\Parser\Parser;
+use JWTAuth\Test\Stubs\UserStub;
+use JWTAuth\Exceptions\JWTException;
+use JWTAuth\Contracts\Providers\Auth;
+use JWTAuth\Exceptions\TokenInvalidException;
 
 class JWTAuthTest extends AbstractTestCase
 {
     /**
-     * @var \Mockery\MockInterface|\Tymon\JWTAuth\Manager
+     * @var \Mockery\MockInterface|\JWTAuth\Manager
      */
     protected $manager;
 
     /**
-     * @var \Mockery\MockInterface|\Tymon\JWTAuth\Contracts\Providers\Auth
+     * @var \Mockery\MockInterface|\JWTAuth\Contracts\Providers\Auth
      */
     protected $auth;
 
     /**
-     * @var \Mockery\MockInterface|\Tymon\JWTAuth\Http\Parser
+     * @var \Mockery\MockInterface|\JWTAuth\Http\Parser
      */
     protected $parser;
 
     /**
-     * @var \Tymon\JWTAuth\JWTAuth
+     * @var \JWTAuth\JWTAuth
      */
     protected $jwtAuth;
 
@@ -118,7 +118,7 @@ class JWTAuthTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\JWTException
+     * @expectedException \JWTAuth\Exceptions\JWTException
      */
     public function it_should_throw_an_exception_when_not_providing_a_token()
     {
@@ -232,7 +232,7 @@ class JWTAuthTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\JWTException
+     * @expectedException \JWTAuth\Exceptions\JWTException
      */
     public function it_should_throw_an_exception_when_token_not_present_in_request()
     {

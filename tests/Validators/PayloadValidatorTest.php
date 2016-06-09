@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Validators;
+namespace JWTAuth\Test\Validators;
 
-use Tymon\JWTAuth\Test\AbstractTestCase;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use JWTAuth\Test\AbstractTestCase;
+use JWTAuth\Validators\PayloadValidator;
 
 class PayloadValidatorTest extends AbstractTestCase
 {
     /**
-     * @var \Tymon\JWTAuth\Validators\PayloadValidator
+     * @var \JWTAuth\Validators\PayloadValidator
      */
     protected $validator;
 
@@ -45,7 +45,7 @@ class PayloadValidatorTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\TokenExpiredException
+     * @expectedException \JWTAuth\Exceptions\TokenExpiredException
      */
     public function it_should_throw_an_exception_when_providing_an_expired_payload()
     {
@@ -63,7 +63,7 @@ class PayloadValidatorTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @expectedException \JWTAuth\Exceptions\TokenInvalidException
      */
     public function it_should_throw_an_exception_when_providing_an_invalid_nbf_claim()
     {
@@ -81,7 +81,7 @@ class PayloadValidatorTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @expectedException \JWTAuth\Exceptions\TokenInvalidException
      */
     public function it_should_throw_an_exception_when_providing_an_invalid_iat_claim()
     {
@@ -99,7 +99,7 @@ class PayloadValidatorTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @expectedException \JWTAuth\Exceptions\TokenInvalidException
      */
     public function it_should_throw_an_exception_when_providing_an_invalid_payload()
     {
@@ -113,7 +113,7 @@ class PayloadValidatorTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @expectedException \JWTAuth\Exceptions\TokenInvalidException
      */
     public function it_should_throw_an_exception_when_providing_an_invalid_expiry()
     {
@@ -175,7 +175,7 @@ class PayloadValidatorTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\TokenExpiredException
+     * @expectedException \JWTAuth\Exceptions\TokenExpiredException
      */
     public function it_should_throw_an_exception_if_the_token_cannot_be_refreshed()
     {

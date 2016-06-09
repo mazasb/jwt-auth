@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Claims;
+namespace JWTAuth\Test\Claims;
 
-use Tymon\JWTAuth\Claims\Expiration;
-use Tymon\JWTAuth\Test\AbstractTestCase;
+use JWTAuth\Claim\Expiration;
+use JWTAuth\Test\AbstractTestCase;
 use Illuminate\Contracts\Support\Arrayable;
 
 class ClaimTest extends AbstractTestCase
 {
     /**
-     * @var \Tymon\JWTAuth\Claims\Expiration
+     * @var \JWTAuth\Claim\Expiration
      */
     protected $claim;
 
@@ -31,7 +31,7 @@ class ClaimTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\InvalidClaimException
+     * @expectedException \JWTAuth\Exceptions\InvalidClaimException
      */
     public function it_should_throw_an_exception_when_passing_an_invalid_value()
     {

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace JWTAuth;
 
 use Countable;
 use ArrayAccess;
@@ -17,12 +17,12 @@ use JsonSerializable;
 use BadMethodCallException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Tymon\JWTAuth\Claims\Claim;
+use JWTAuth\Claim\Claim;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Contracts\Support\Arrayable;
-use Tymon\JWTAuth\Exceptions\PayloadException;
-use Tymon\JWTAuth\Validators\PayloadValidator;
+use JWTAuth\Exceptions\PayloadException;
+use JWTAuth\Validators\PayloadValidator;
 
 class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Countable
 {
@@ -37,7 +37,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
      * Build the Payload.
      *
      * @param  \Illuminate\Support\Collection  $claims
-     * @param  \Tymon\JWTAuth\Validators\PayloadValidator  $validator
+     * @param  \JWTAuth\Validators\PayloadValidator  $validator
      * @param  bool  $refreshFlow
      *
      * @return void
@@ -84,7 +84,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Determine whether the payload has the claim (by instance).
      *
-     * @param  \Tymon\JWTAuth\Claims\Claim  $claim
+     * @param  \JWTAuth\Claim\Claim  $claim
      *
      * @return bool
      */
@@ -181,7 +181,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
      * @param  mixed  $key
      * @param  mixed  $value
      *
-     * @throws \Tymon\JWTAuth\Exceptions\PayloadException
+     * @throws \JWTAuth\Exceptions\PayloadException
      */
     public function offsetSet($key, $value)
     {
@@ -193,7 +193,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
      *
      * @param  string  $key
      *
-     * @throws \Tymon\JWTAuth\Exceptions\PayloadException
+     * @throws \JWTAuth\Exceptions\PayloadException
      *
      * @return void
      */
@@ -237,7 +237,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     public function __call($method, $parameters)
     {
         if (Str::startsWith($method, 'get')) {
-            $class = sprintf('Tymon\\JWTAuth\\Claims\\%s', substr($method, 3));
+            $class = sprintf('JWTAuth\\Claims\\%s', substr($method, 3));
 
             foreach ($this->claims as $claim) {
                 if (get_class($claim) === $class) {

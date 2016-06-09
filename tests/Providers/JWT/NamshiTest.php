@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Providers\JWT;
+namespace JWTAuth\Test\Providers\JWT;
 
 use Mockery;
 use Namshi\JOSE\JWS;
-use Tymon\JWTAuth\Providers\JWT\Namshi;
-use Tymon\JWTAuth\Test\AbstractTestCase;
+use JWTAuth\Providers\JWT\Namshi;
+use JWTAuth\Test\AbstractTestCase;
 
 class NamshiTest extends AbstractTestCase
 {
@@ -24,7 +24,7 @@ class NamshiTest extends AbstractTestCase
     protected $jws;
 
     /**
-     * @var \Tymon\JWTAuth\Providers\JWT\Namshi
+     * @var \JWTAuth\Providers\JWT\Namshi
      */
     protected $provider;
 
@@ -58,7 +58,7 @@ class NamshiTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\JWTException
+     * @expectedException \JWTAuth\Exceptions\JWTException
      */
     public function it_should_throw_an_invalid_exception_when_the_payload_could_not_be_encoded()
     {
@@ -82,7 +82,7 @@ class NamshiTest extends AbstractTestCase
 
     /**
      * @test
-     * @expectedException \Tymon\JWTAuth\Exceptions\TokenInvalidException
+     * @expectedException \JWTAuth\Exceptions\TokenInvalidException
      */
     // public function it_should_throw_a_token_invalid_exception_when_the_token_could_not_be_decoded()
     // {

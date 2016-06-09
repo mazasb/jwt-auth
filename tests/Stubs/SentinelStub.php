@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test\Stubs;
+namespace JWTAuth\Test\Stubs;
 
 use Cartalyst\Sentinel\Users\UserInterface;
 

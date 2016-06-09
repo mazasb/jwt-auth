@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth;
+namespace JWTAuth;
 
-use Tymon\JWTAuth\Support\Utils;
-use Tymon\JWTAuth\Contracts\Providers\Storage;
+use JWTAuth\Support\Utils;
+use JWTAuth\Contracts\Providers\Storage;
 
 class Blacklist
 {
     /**
-     * @var \Tymon\JWTAuth\Contracts\Providers\Storage
+     * @var \JWTAuth\Contracts\Providers\Storage
      */
     protected $storage;
 
@@ -43,7 +43,7 @@ class Blacklist
     protected $key = 'jti';
 
     /**
-     * @param  \Tymon\JWTAuth\Contracts\Providers\Storage  $storage
+     * @param  \JWTAuth\Contracts\Providers\Storage  $storage
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class Blacklist
     /**
      * Add the token (jti claim) to the blacklist.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \JWTAuth\Payload  $payload
      *
      * @return bool
      */
@@ -79,7 +79,7 @@ class Blacklist
     /**
      * Get the number of minutes until the token expiry.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \JWTAuth\Payload  $payload
      *
      * @return int
      */
@@ -97,7 +97,7 @@ class Blacklist
     /**
      * Add the token (jti claim) to the blacklist indefinitely.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \JWTAuth\Payload  $payload
      *
      * @return bool
      */
@@ -111,7 +111,7 @@ class Blacklist
     /**
      * Determine whether the token has been blacklisted.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \JWTAuth\Payload  $payload
      *
      * @return bool
      */
@@ -131,7 +131,7 @@ class Blacklist
     /**
      * Remove the token (jti claim) from the blacklist.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \JWTAuth\Payload  $payload
      *
      * @return bool
      */
@@ -180,7 +180,7 @@ class Blacklist
     /**
      * Get the unique key held within the blacklist.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param  \JWTAuth\Payload  $payload
      *
      * @return mixed
      */

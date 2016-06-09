@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tymon\JWTAuth\Test;
+namespace JWTAuth\Test;
 
 use Carbon\Carbon;
 use PHPUnit_Framework_TestCase;
