@@ -7,8 +7,23 @@
 
 namespace JWTAuth\Claim;
 
+use DateTimeInterface;
+use JWTAuth\Exceptions\InvalidClaimException;
+
 abstract class DateTime extends Claim
 {
+    /**
+     * @inheritDoc
+     */
+    public function __construct($value)
+    {
+        if ($value instanceof DateTimeInterface)
+        {
+            $value = $value->getTimestamp();
+        }
+        parent::__construct($value);
+    }
+
     /**
      * @inheritDoc
      */
@@ -18,7 +33,7 @@ abstract class DateTime extends Claim
 
         if (!is_int($value))
         {
-            throw new \UnexpectedValueException(sprintf('Timestamp must be integer, %s given.', gettype($value)));
+            throw new InvalidClaimException(sprintf('Timestamp must be integer, %s given.', gettype($value)));
         }
     }
 }

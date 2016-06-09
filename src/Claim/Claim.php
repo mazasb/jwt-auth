@@ -5,6 +5,7 @@ namespace JWTAuth\Claim;
 use JsonSerializable;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Contracts\Support\Arrayable;
+use JWTAuth\Exceptions\InvalidClaimException;
 
 abstract class Claim implements Arrayable, Jsonable, JsonSerializable
 {
@@ -23,7 +24,7 @@ abstract class Claim implements Arrayable, Jsonable, JsonSerializable
         $name = $this->getName();
         if (empty($name) || !is_string($name))
         {
-            throw new \InvalidArgumentException('Claim name must be not empty string.');
+            throw new InvalidClaimException('Claim name must be not empty string.');
         }
 
         $this->validate($value);
@@ -71,7 +72,7 @@ abstract class Claim implements Arrayable, Jsonable, JsonSerializable
      */
     public function toArray()
     {
-        return [$this->name => $this->value];
+        return [$this->getName() => $this->value];
     }
 
     /**

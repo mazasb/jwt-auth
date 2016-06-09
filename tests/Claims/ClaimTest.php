@@ -35,7 +35,7 @@ class ClaimTest extends AbstractTestCase
      */
     public function it_should_throw_an_exception_when_passing_an_invalid_value()
     {
-        $this->claim->setValue('foo');
+        new Expiration('foo');
     }
 
     /** @test */

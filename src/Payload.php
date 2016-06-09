@@ -237,7 +237,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     public function __call($method, $parameters)
     {
         if (Str::startsWith($method, 'get')) {
-            $class = sprintf('JWTAuth\\Claims\\%s', substr($method, 3));
+            $class = sprintf('JWTAuth\\Claim\\%s', substr($method, 3));
 
             foreach ($this->claims as $claim) {
                 if (get_class($claim) === $class) {

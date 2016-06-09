@@ -2,6 +2,7 @@
 
 namespace JWTAuth\Claim;
 
+use JWTAuth\Exceptions\InvalidClaimException;
 use JWTAuth\Support\Utils;
 
 final class IssuedAt extends DateTime
@@ -24,7 +25,7 @@ final class IssuedAt extends DateTime
         parent::validate($timestamp);
         if (Utils::isFuture($timestamp))
         {
-            throw new \InvalidArgumentException('IssuedAt value cannot set future timestamp.');
+            throw new InvalidClaimException('IssuedAt value cannot set future timestamp.');
         }
     }
 }
