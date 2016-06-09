@@ -28,19 +28,19 @@ class Utils
     /**
      * Get the Carbon instance for the timestamp.
      *
-     * @param  int  $timestamp
+     * @param int $timestamp
      *
      * @return \Carbon\Carbon
      */
     public static function timestamp($timestamp)
     {
-        return Carbon::createFromTimeStampUTC($timestamp)->timezone('UTC');
+        return Carbon::createFromTimestampUTC($timestamp)->timezone('UTC');
     }
 
     /**
      * Checks if a timestamp is in the past.
      *
-     * @param  int  $timestamp
+     * @param int $timestamp
      *
      * @return bool
      */
@@ -52,7 +52,7 @@ class Utils
     /**
      * Checks if a timestamp is in the future.
      *
-     * @param  int  $timestamp
+     * @param int $timestamp
      *
      * @return bool
      */

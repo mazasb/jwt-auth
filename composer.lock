@@ -1956,12 +1956,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/octobercms/library.git",
-                "reference": "71fa4cfd3af822490983b103778046d90c61300a"
+                "reference": "1113453e6a9225f7c3ba09f2e544cd719dbcfd00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octobercms/library/zipball/71fa4cfd3af822490983b103778046d90c61300a",
-                "reference": "71fa4cfd3af822490983b103778046d90c61300a",
+                "url": "https://api.github.com/repos/octobercms/library/zipball/1113453e6a9225f7c3ba09f2e544cd719dbcfd00",
+                "reference": "1113453e6a9225f7c3ba09f2e544cd719dbcfd00",
                 "shasum": ""
             },
             "require": {
@@ -2042,7 +2042,7 @@
                 "october",
                 "rain"
             ],
-            "time": "2016-06-06 21:08:26"
+            "time": "2016-06-08 20:24:24"
         },
         {
             "name": "oyejorge/less.php",
