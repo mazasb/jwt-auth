@@ -61,7 +61,7 @@ class ManagerTest extends AbstractTestCase
         $this->jwt = Mockery::mock(JWT::class);
         $this->blacklist = Mockery::mock(Blacklist::class);
         $this->factory = Mockery::mock(Factory::class);
-        $this->manager = new Manager($this->jwt, $this->blacklist, $this->factory);
+        $this->manager = new Manager($this->jwt, $this->factory, $this->blacklist);
 
         $this->validator = Mockery::mock(PayloadValidator::class);
         $this->validator->shouldReceive('setRefreshFlow->check');

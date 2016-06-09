@@ -27,32 +27,31 @@ class Manager
     protected $provider;
 
     /**
-     * @var \JWTAuth\Blacklist
-     */
-    protected $blacklist;
-
-    /**
      * @var \JWTAuth\Factory
      */
     protected $payloadFactory;
 
     /**
-     * @var bool
+     * @var \JWTAuth\Blacklist
      */
-    protected $blacklistEnabled = true;
+    protected $blacklist;
 
     /**
-     * @param  \JWTAuth\Contracts\Providers\JWT  $provider
-     * @param  \JWTAuth\Blacklist  $blacklist
-     * @param  \JWTAuth\Factory  $payloadFactory
-     *
-     * @return void
+     * @var bool
      */
-    public function __construct(JWTContract $provider, Blacklist $blacklist, Factory $payloadFactory)
+    protected $blacklistEnabled;
+
+    /**
+     * @param  \JWTAuth\Contracts\Providers\JWT $provider
+     * @param  \JWTAuth\Factory $payloadFactory
+     * @param  \JWTAuth\Blacklist $blacklist
+     */
+    public function __construct(JWTContract $provider, Factory $payloadFactory, Blacklist $blacklist = null)
     {
         $this->provider = $provider;
-        $this->blacklist = $blacklist;
         $this->payloadFactory = $payloadFactory;
+        $this->blacklist = $blacklist;
+        $this->blacklistEnabled = $blacklist !== null ?: false;
     }
 
     /**
@@ -175,14 +174,26 @@ class Manager
     }
 
     /**
+     * @return boolean
+     */
+    public function isBlacklistEnabled()
+    {
+        return $this->blacklistEnabled;
+    }
+
+    /**
      * Set whether the blacklist is enabled.
      *
-     * @param  bool  $enabled
+     * @param bool $enabled
      *
      * @return $this
      */
     public function setBlacklistEnabled($enabled)
     {
+        if ($this->blacklist === null)
+        {
+            throw new \RuntimeException('BlacklistEnabled only set when Blacklist is setted');
+        }
         $this->blacklistEnabled = $enabled;
 
         return $this;
