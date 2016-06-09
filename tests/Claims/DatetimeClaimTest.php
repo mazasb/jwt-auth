@@ -11,19 +11,19 @@
 
 namespace Tymon\JWTAuth\Test\Claims;
 
-use Mockery;
-use DateTime;
 use Carbon\Carbon;
+use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
-use Tymon\JWTAuth\Payload;
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Claims\Issuer;
-use Tymon\JWTAuth\Claims\Subject;
 use Illuminate\Support\Collection;
-use Tymon\JWTAuth\Claims\IssuedAt;
-use Tymon\JWTAuth\Claims\NotBefore;
+use Mockery;
 use Tymon\JWTAuth\Claims\Expiration;
+use Tymon\JWTAuth\Claims\IssuedAt;
+use Tymon\JWTAuth\Claims\Issuer;
+use Tymon\JWTAuth\Claims\JwtId;
+use Tymon\JWTAuth\Claims\NotBefore;
+use Tymon\JWTAuth\Claims\Subject;
+use Tymon\JWTAuth\Payload;
 use Tymon\JWTAuth\Test\AbstractTestCase;
 use Tymon\JWTAuth\Validators\PayloadValidator;
 

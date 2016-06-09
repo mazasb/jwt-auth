@@ -23,7 +23,7 @@ class UserStub implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [
-            'foo' => 'bar',
+            'foo'  => 'bar',
             'role' => 'admin',
         ];
     }

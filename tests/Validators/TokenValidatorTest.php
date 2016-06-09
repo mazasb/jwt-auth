@@ -51,7 +51,7 @@ class TokenValidatorTest extends AbstractTestCase
      * @test
      * @dataProvider \Tymon\JWTAuth\Test\Validators\TokenValidatorTest::dataProviderMalformedTokens
      *
-     * @param  string  $token
+     * @param string $token
      */
     public function it_should_return_false_when_providing_a_malformed_token($token)
     {
@@ -62,7 +62,7 @@ class TokenValidatorTest extends AbstractTestCase
      * @test
      * @dataProvider \Tymon\JWTAuth\Test\Validators\TokenValidatorTest::dataProviderMalformedTokens
      *
-     * @param  string  $token
+     * @param string $token
      * @expectedException \Tymon\JWTAuth\Exceptions\TokenInvalidException
      * @expectedExceptionMessage Malformed token
      */
@@ -84,7 +84,7 @@ class TokenValidatorTest extends AbstractTestCase
      * @test
      * @dataProvider \Tymon\JWTAuth\Test\Validators\TokenValidatorTest::dataProviderTokensWithWrongSegmentsNumber
      *
-     * @param  string  $token
+     * @param string $token
      */
     public function it_should_return_false_when_providing_a_token_with_wrong_segments_number($token)
     {
@@ -95,7 +95,7 @@ class TokenValidatorTest extends AbstractTestCase
      * @test
      * @dataProvider \Tymon\JWTAuth\Test\Validators\TokenValidatorTest::dataProviderTokensWithWrongSegmentsNumber
      *
-     * @param  string  $token
+     * @param string $token
      * @expectedException \Tymon\JWTAuth\Exceptions\TokenInvalidException
      * @expectedExceptionMessage Wrong number of segments
      */

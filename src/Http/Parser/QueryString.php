@@ -26,7 +26,7 @@ class QueryString implements ParserContract
     /**
      * Try to parse the token from the request query string.
      *
-     * @param  \Symfony\Component\HttpFoundation\Request  $request
+     * @param \Symfony\Component\HttpFoundation\Request $request
      *
      * @return null|string
      */
@@ -38,7 +38,7 @@ class QueryString implements ParserContract
     /**
      * Set the query string key.
      *
-     * @param  string  $key
+     * @param string $key
      *
      * @return $this
      */

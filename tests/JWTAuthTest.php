@@ -13,17 +13,17 @@ namespace Tymon\JWTAuth\Test;
 
 use Mockery;
 use StdClass;
-use Tymon\JWTAuth\Token;
+use Symfony\Component\HttpFoundation\Request;
+use Tymon\JWTAuth\Contracts\Providers\Auth;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 use Tymon\JWTAuth\Factory;
+use Tymon\JWTAuth\Http\Parser\Parser;
 use Tymon\JWTAuth\JWTAuth;
 use Tymon\JWTAuth\Manager;
 use Tymon\JWTAuth\Payload;
-use Symfony\Component\HttpFoundation\Request;
-use Tymon\JWTAuth\Http\Parser\Parser;
 use Tymon\JWTAuth\Test\Stubs\UserStub;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Contracts\Providers\Auth;
-use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use Tymon\JWTAuth\Token;
 
 class JWTAuthTest extends AbstractTestCase
 {
@@ -77,7 +77,7 @@ class JWTAuthTest extends AbstractTestCase
 
         $this->manager->shouldReceive('encode->get')->once()->andReturn('foo.bar.baz');
 
-        $token = $this->jwtAuth->fromUser(new UserStub);
+        $token = $this->jwtAuth->fromUser(new UserStub());
 
         $this->assertSame($token, 'foo.bar.baz');
     }
@@ -97,7 +97,7 @@ class JWTAuthTest extends AbstractTestCase
         $this->manager->shouldReceive('encode->get')->once()->andReturn('foo.bar.baz');
 
         $this->auth->shouldReceive('byCredentials')->once()->andReturn(true);
-        $this->auth->shouldReceive('user')->once()->andReturn(new UserStub);
+        $this->auth->shouldReceive('user')->once()->andReturn(new UserStub());
 
         $token = $this->jwtAuth->attempt(['foo' => 'bar']);
 
@@ -214,7 +214,7 @@ class JWTAuthTest extends AbstractTestCase
     public function it_should_return_false_if_the_token_is_invalid()
     {
         $this->parser->shouldReceive('parseToken')->andReturn('foo.bar.baz');
-        $this->manager->shouldReceive('decode')->once()->andThrow(new TokenInvalidException);
+        $this->manager->shouldReceive('decode')->once()->andThrow(new TokenInvalidException());
 
         $this->assertFalse($this->jwtAuth->parseToken()->check());
     }
@@ -252,7 +252,7 @@ class JWTAuthTest extends AbstractTestCase
     /** @test */
     public function it_should_magically_call_the_manager()
     {
-        $this->manager->shouldReceive('getBlacklist')->andReturn(new StdClass);
+        $this->manager->shouldReceive('getBlacklist')->andReturn(new StdClass());
 
         $blacklist = $this->jwtAuth->getBlacklist();
 
@@ -275,7 +275,7 @@ class JWTAuthTest extends AbstractTestCase
     /** @test */
     public function it_should_unset_the_token()
     {
-        $this->parser->shouldReceive('parseToken')->andThrow(new JWTException);
+        $this->parser->shouldReceive('parseToken')->andThrow(new JWTException());
         $token = new Token('foo.bar.baz');
         $this->jwtAuth->setToken($token);
 

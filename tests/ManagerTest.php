@@ -11,20 +11,20 @@
 
 namespace Tymon\JWTAuth\Test;
 
+use Illuminate\Support\Collection;
 use Mockery;
-use Tymon\JWTAuth\Token;
+use Tymon\JWTAuth\Blacklist;
+use Tymon\JWTAuth\Claims\Expiration;
+use Tymon\JWTAuth\Claims\IssuedAt;
+use Tymon\JWTAuth\Claims\Issuer;
+use Tymon\JWTAuth\Claims\JwtId;
+use Tymon\JWTAuth\Claims\NotBefore;
+use Tymon\JWTAuth\Claims\Subject;
+use Tymon\JWTAuth\Contracts\Providers\JWT;
 use Tymon\JWTAuth\Factory;
 use Tymon\JWTAuth\Manager;
 use Tymon\JWTAuth\Payload;
-use Tymon\JWTAuth\Blacklist;
-use Tymon\JWTAuth\Claims\JwtId;
-use Tymon\JWTAuth\Claims\Issuer;
-use Tymon\JWTAuth\Claims\Subject;
-use Illuminate\Support\Collection;
-use Tymon\JWTAuth\Claims\IssuedAt;
-use Tymon\JWTAuth\Claims\NotBefore;
-use Tymon\JWTAuth\Claims\Expiration;
-use Tymon\JWTAuth\Contracts\Providers\JWT;
+use Tymon\JWTAuth\Token;
 use Tymon\JWTAuth\Validators\PayloadValidator;
 
 class ManagerTest extends AbstractTestCase

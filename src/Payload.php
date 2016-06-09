@@ -11,16 +11,16 @@
 
 namespace Tymon\JWTAuth;
 
-use Countable;
 use ArrayAccess;
-use JsonSerializable;
 use BadMethodCallException;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Tymon\JWTAuth\Claims\Claim;
-use Illuminate\Support\Collection;
-use Illuminate\Contracts\Support\Jsonable;
+use Countable;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
+use JsonSerializable;
+use Tymon\JWTAuth\Claims\Claim;
 use Tymon\JWTAuth\Exceptions\PayloadException;
 use Tymon\JWTAuth\Validators\PayloadValidator;
 
@@ -36,9 +36,9 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Build the Payload.
      *
-     * @param  \Illuminate\Support\Collection  $claims
-     * @param  \Tymon\JWTAuth\Validators\PayloadValidator  $validator
-     * @param  bool  $refreshFlow
+     * @param \Illuminate\Support\Collection             $claims
+     * @param \Tymon\JWTAuth\Validators\PayloadValidator $validator
+     * @param bool                                       $refreshFlow
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Get the payload.
      *
-     * @param  mixed  $claim
+     * @param mixed $claim
      *
      * @return mixed
      */
@@ -84,7 +84,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Determine whether the payload has the claim (by instance).
      *
-     * @param  \Tymon\JWTAuth\Claims\Claim  $claim
+     * @param \Tymon\JWTAuth\Claims\Claim $claim
      *
      * @return bool
      */
@@ -96,7 +96,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Determine whether the payload has the claim (by key).
      *
-     * @param  string  $claim
+     * @param string $claim
      *
      * @return bool
      */
@@ -132,7 +132,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Get the payload as JSON.
      *
-     * @param  int  $options
+     * @param int $options
      *
      * @return string
      */
@@ -154,7 +154,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Determine if an item exists at an offset.
      *
-     * @param  mixed  $key
+     * @param mixed $key
      *
      * @return bool
      */
@@ -166,7 +166,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Get an item at a given offset.
      *
-     * @param  mixed  $key
+     * @param mixed $key
      *
      * @return mixed
      */
@@ -178,8 +178,8 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Don't allow changing the payload as it should be immutable.
      *
-     * @param  mixed  $key
-     * @param  mixed  $value
+     * @param mixed $key
+     * @param mixed $value
      *
      * @throws \Tymon\JWTAuth\Exceptions\PayloadException
      */
@@ -191,7 +191,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Don't allow changing the payload as it should be immutable.
      *
-     * @param  string  $key
+     * @param string $key
      *
      * @throws \Tymon\JWTAuth\Exceptions\PayloadException
      *
@@ -215,7 +215,7 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Invoke the Payload as a callable function.
      *
-     * @param  mixed  $claim
+     * @param mixed $claim
      *
      * @return mixed
      */
@@ -227,8 +227,8 @@ class Payload implements ArrayAccess, Arrayable, JsonSerializable, Jsonable, Cou
     /**
      * Magically get a claim value.
      *
-     * @param  string  $method
-     * @param  array  $parameters
+     * @param string $method
+     * @param array  $parameters
      *
      * @throws \BadMethodCallException
      *
