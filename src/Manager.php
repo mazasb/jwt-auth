@@ -11,11 +11,11 @@
 
 namespace Tymon\JWTAuth;
 
-use Tymon\JWTAuth\Support\RefreshFlow;
-use Tymon\JWTAuth\Support\CustomClaims;
+use Tymon\JWTAuth\Contracts\Providers\JWT as JWTContract;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenBlacklistedException;
-use Tymon\JWTAuth\Contracts\Providers\JWT as JWTContract;
+use Tymon\JWTAuth\Support\CustomClaims;
+use Tymon\JWTAuth\Support\RefreshFlow;
 
 class Manager
 {
@@ -42,9 +42,9 @@ class Manager
     protected $blacklistEnabled = true;
 
     /**
-     * @param  \Tymon\JWTAuth\Contracts\Providers\JWT  $provider
-     * @param  \Tymon\JWTAuth\Blacklist  $blacklist
-     * @param  \Tymon\JWTAuth\Factory  $payloadFactory
+     * @param \Tymon\JWTAuth\Contracts\Providers\JWT $provider
+     * @param \Tymon\JWTAuth\Blacklist               $blacklist
+     * @param \Tymon\JWTAuth\Factory                 $payloadFactory
      *
      * @return void
      */
@@ -58,7 +58,7 @@ class Manager
     /**
      * Encode a Payload and return the Token.
      *
-     * @param  \Tymon\JWTAuth\Payload  $payload
+     * @param \Tymon\JWTAuth\Payload $payload
      *
      * @return \Tymon\JWTAuth\Token
      */
@@ -72,7 +72,7 @@ class Manager
     /**
      * Decode a Token and return the Payload.
      *
-     * @param  \Tymon\JWTAuth\Token  $token
+     * @param \Tymon\JWTAuth\Token $token
      *
      * @throws \Tymon\JWTAuth\Exceptions\TokenBlacklistedException
      *
@@ -97,7 +97,7 @@ class Manager
     /**
      * Refresh a Token and return a new Token.
      *
-     * @param  \Tymon\JWTAuth\Token  $token
+     * @param \Tymon\JWTAuth\Token $token
      *
      * @return \Tymon\JWTAuth\Token
      */
@@ -125,8 +125,8 @@ class Manager
     /**
      * Invalidate a Token by adding it to the blacklist.
      *
-     * @param  \Tymon\JWTAuth\Token  $token
-     * @param  bool  $forceForever
+     * @param \Tymon\JWTAuth\Token $token
+     * @param bool                 $forceForever
      *
      * @throws \Tymon\JWTAuth\Exceptions\JWTException
      *
@@ -134,7 +134,7 @@ class Manager
      */
     public function invalidate(Token $token, $forceForever = false)
     {
-        if (! $this->blacklistEnabled) {
+        if (!$this->blacklistEnabled) {
             throw new JWTException('You must have the blacklist enabled to invalidate a token.');
         }
 
@@ -177,7 +177,7 @@ class Manager
     /**
      * Set whether the blacklist is enabled.
      *
-     * @param  bool  $enabled
+     * @param bool $enabled
      *
      * @return $this
      */

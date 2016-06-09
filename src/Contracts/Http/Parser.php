@@ -18,7 +18,7 @@ interface Parser
     /**
      * Parse the request.
      *
-     * @param  \Symfony\Component\HttpFoundation\Request  $request
+     * @param \Symfony\Component\HttpFoundation\Request $request
      *
      * @return null|string
      */

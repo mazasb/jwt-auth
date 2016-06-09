@@ -65,7 +65,7 @@ class NamshiTest extends AbstractTestCase
         $payload = ['sub' => 1, 'exp' => $this->testNowTimestamp, 'iat' => $this->testNowTimestamp, 'iss' => '/foo'];
 
         $this->jws->shouldReceive('setPayload')->once()->with($payload)->andReturn(Mockery::self());
-        $this->jws->shouldReceive('sign')->andThrow(new \Exception);
+        $this->jws->shouldReceive('sign')->andThrow(new \Exception());
 
         $this->getProvider('secret', 'HS256')->encode($payload);
     }

@@ -12,10 +12,10 @@
 namespace Tymon\JWTAuth\Providers\JWT;
 
 use Exception;
-use ReflectionClass;
-use Namshi\JOSE\JWS;
 use InvalidArgumentException;
+use Namshi\JOSE\JWS;
 use Namshi\JOSE\Signer\OpenSSL\PublicKey;
+use ReflectionClass;
 use Tymon\JWTAuth\Contracts\Providers\JWT;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
@@ -28,10 +28,10 @@ class Namshi extends Provider implements JWT
     protected $jws;
 
     /**
-     * @param  string  $secret
-     * @param  string  $algo
-     * @param  array  $keys
-     * @param  string|null  $driver
+     * @param string      $secret
+     * @param string      $algo
+     * @param array       $keys
+     * @param string|null $driver
      *
      * @return void
      */
@@ -45,7 +45,7 @@ class Namshi extends Provider implements JWT
     /**
      * Create a JSON Web Token.
      *
-     * @param  array  $payload
+     * @param array $payload
      *
      * @throws \Tymon\JWTAuth\Exceptions\JWTException
      *
@@ -65,7 +65,7 @@ class Namshi extends Provider implements JWT
     /**
      * Decode a JSON Web Token.
      *
-     * @param  string  $token
+     * @param string $token
      *
      * @throws \Tymon\JWTAuth\Exceptions\JWTException
      *
@@ -80,7 +80,7 @@ class Namshi extends Provider implements JWT
             throw new TokenInvalidException('Could not decode token: '.$e->getMessage(), $e->getCode(), $e);
         }
 
-        if (! $jws->verify($this->getVerificationKey(), $this->getAlgo())) {
+        if (!$jws->verify($this->getVerificationKey(), $this->getAlgo())) {
             throw new TokenInvalidException('Token Signature could not be verified.');
         }
 

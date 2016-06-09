@@ -15,11 +15,11 @@ use Mockery;
 //use Illuminate\Http\Request;
 //use Illuminate\Routing\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Tymon\JWTAuth\Http\Parser\Parser;
-use Tymon\JWTAuth\Http\Parser\Cookies;
-use Tymon\JWTAuth\Test\AbstractTestCase;
 use Tymon\JWTAuth\Http\Parser\AuthHeaders;
+use Tymon\JWTAuth\Http\Parser\Cookies;
+use Tymon\JWTAuth\Http\Parser\Parser;
 use Tymon\JWTAuth\Http\Parser\QueryString;
+use Tymon\JWTAuth\Test\AbstractTestCase;
 
 class ParserTest extends AbstractTestCase
 {
@@ -32,8 +32,8 @@ class ParserTest extends AbstractTestCase
         $parser = new Parser($request);
 
         $parser->setChain([
-            new QueryString,
-            new AuthHeaders,
+            new QueryString(),
+            new AuthHeaders(),
         ]);
 
         $this->assertSame($parser->parseToken(), 'foobar');
@@ -49,7 +49,7 @@ class ParserTest extends AbstractTestCase
         $parser = new Parser($request);
 
         $parser->setChain([
-            new QueryString,
+            new QueryString(),
             (new AuthHeaders())->setHeaderPrefix('Custom'),
         ]);
 
@@ -66,7 +66,7 @@ class ParserTest extends AbstractTestCase
         $parser = new Parser($request);
 
         $parser->setChain([
-            new QueryString,
+            new QueryString(),
             (new AuthHeaders())->setHeaderName('custom_authorization'),
         ]);
 
@@ -84,8 +84,8 @@ class ParserTest extends AbstractTestCase
         $request2->server->set('REDIRECT_HTTP_AUTHORIZATION', 'Bearer foobarbaz');
 
         $parser = new Parser($request1, [
-            new AuthHeaders,
-            new QueryString,
+            new AuthHeaders(),
+            new QueryString(),
         ]);
 
         $this->assertSame($parser->parseToken(), 'foobar');
@@ -103,8 +103,8 @@ class ParserTest extends AbstractTestCase
 
         $parser = new Parser($request);
         $parser->setChain([
-            new AuthHeaders,
-            new QueryString,
+            new AuthHeaders(),
+            new QueryString(),
         ]);
 
         $this->assertSame($parser->parseToken(), 'foobar');
@@ -118,8 +118,8 @@ class ParserTest extends AbstractTestCase
 
         $parser = new Parser($request);
         $parser->setChain([
-            new AuthHeaders,
-            (new QueryString)->setKey('custom_token_key'),
+            new AuthHeaders(),
+            (new QueryString())->setKey('custom_token_key'),
         ]);
 
         $this->assertSame($parser->parseToken(), 'foobar');
@@ -133,8 +133,8 @@ class ParserTest extends AbstractTestCase
 
         $parser = new Parser($request);
         $parser->setChain([
-            new AuthHeaders,
-            new QueryString,
+            new AuthHeaders(),
+            new QueryString(),
         ]);
 
         $this->assertSame($parser->parseToken(), 'foobar');
@@ -148,8 +148,8 @@ class ParserTest extends AbstractTestCase
 
         $parser = new Parser($request);
         $parser->setChain([
-            new AuthHeaders,
-            (new QueryString)->setKey('custom_token_key'),
+            new AuthHeaders(),
+            (new QueryString())->setKey('custom_token_key'),
         ]);
 
         $this->assertSame($parser->parseToken(), 'foobar');
@@ -163,9 +163,9 @@ class ParserTest extends AbstractTestCase
 
         $parser = new Parser($request);
         $parser->setChain([
-            new AuthHeaders,
-            new QueryString,
-            new Cookies,
+            new AuthHeaders(),
+            new QueryString(),
+            new Cookies(),
         ]);
 
         $this->assertSame($parser->parseToken(), 'foobar');
@@ -179,8 +179,8 @@ class ParserTest extends AbstractTestCase
 
         $parser = new Parser($request);
         $parser->setChain([
-            new AuthHeaders,
-            new QueryString,
+            new AuthHeaders(),
+            new QueryString(),
         ]);
 
         $this->assertNull($parser->parseToken());
@@ -194,8 +194,8 @@ class ParserTest extends AbstractTestCase
 
         $parser = new Parser($request);
         $parser->setChain([
-            new AuthHeaders,
-            new QueryString,
+            new AuthHeaders(),
+            new QueryString(),
         ]);
 
         $this->assertNull($parser->parseToken());
@@ -206,8 +206,8 @@ class ParserTest extends AbstractTestCase
     public function it_should_retrieve_the_chain()
     {
         $chain = [
-            new AuthHeaders,
-            new QueryString,
+            new AuthHeaders(),
+            new QueryString(),
         ];
 
         $parser = new Parser(Mockery::mock(Request::class));
@@ -220,8 +220,8 @@ class ParserTest extends AbstractTestCase
     public function it_should_retrieve_the_chain_with_alias()
     {
         $chain = [
-            new AuthHeaders,
-            new QueryString,
+            new AuthHeaders(),
+            new QueryString(),
         ];
 
         $parser = new Parser(Mockery::mock(Request::class));

@@ -11,14 +11,14 @@
 
 namespace Tymon\JWTAuth;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Request;
-use Tymon\JWTAuth\Support\Utils;
-use Illuminate\Support\Collection;
-use Tymon\JWTAuth\Support\RefreshFlow;
-use Tymon\JWTAuth\Support\CustomClaims;
-use Tymon\JWTAuth\Validators\PayloadValidator;
 use Tymon\JWTAuth\Claims\Factory as ClaimFactory;
+use Tymon\JWTAuth\Support\CustomClaims;
+use Tymon\JWTAuth\Support\RefreshFlow;
+use Tymon\JWTAuth\Support\Utils;
+use Tymon\JWTAuth\Validators\PayloadValidator;
 
 class Factory
 {
@@ -55,9 +55,9 @@ class Factory
     protected $claims;
 
     /**
-     * @param  \Tymon\JWTAuth\Claims\Factory  $claimFactory
-     * @param  \Symfony\Component\HttpFoundation\Request  $request
-     * @param  \Tymon\JWTAuth\Validators\PayloadValidator  $validator
+     * @param \Tymon\JWTAuth\Claims\Factory              $claimFactory
+     * @param \Symfony\Component\HttpFoundation\Request  $request
+     * @param \Tymon\JWTAuth\Validators\PayloadValidator $validator
      *
      * @return void
      */
@@ -67,7 +67,7 @@ class Factory
         $this->request = $request;
         $this->validator = $validator;
 
-        $this->claims = new Collection;
+        $this->claims = new Collection();
     }
 
     /**
@@ -85,7 +85,7 @@ class Factory
     /**
      * Add an array of claims to the Payload.
      *
-     * @param  array  $claims
+     * @param array $claims
      *
      * @return $this
      */
@@ -101,8 +101,8 @@ class Factory
     /**
      * Add a claim to the Payload.
      *
-     * @param  string  $name
-     * @param  mixed  $value
+     * @param string $name
+     * @param mixed  $value
      *
      * @return $this
      */
@@ -151,7 +151,7 @@ class Factory
     /**
      * Get a Payload instance with a claims collection.
      *
-     * @param  \Illuminate\Support\Collection  $claims
+     * @param \Illuminate\Support\Collection $claims
      *
      * @return \Tymon\JWTAuth\Payload
      */
@@ -213,7 +213,7 @@ class Factory
     /**
      * Set the request instance.
      *
-     * @param  \Symfony\Component\HttpFoundation\Request  $request
+     * @param \Symfony\Component\HttpFoundation\Request $request
      *
      * @return $this
      */
@@ -227,7 +227,7 @@ class Factory
     /**
      * Set the token ttl (in minutes).
      *
-     * @param  int  $ttl
+     * @param int $ttl
      *
      * @return $this
      */
@@ -251,7 +251,7 @@ class Factory
     /**
      * Set the default claims to be added to the Payload.
      *
-     * @param  array  $claims
+     * @param array $claims
      *
      * @return $this
      */
@@ -285,8 +285,8 @@ class Factory
     /**
      * Magically add a claim.
      *
-     * @param  string  $method
-     * @param  array  $parameters
+     * @param string $method
+     * @param array  $parameters
      *
      * @return $this
      */

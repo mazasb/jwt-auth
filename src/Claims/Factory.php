@@ -29,8 +29,8 @@ class Factory
     /**
      * Get the instance of the claim when passing the name and value.
      *
-     * @param  string  $name
-     * @param  mixed  $value
+     * @param string $name
+     * @param mixed  $value
      *
      * @return \Tymon\JWTAuth\Claims\Claim
      */
@@ -46,7 +46,7 @@ class Factory
     /**
      * Check whether the claim exists.
      *
-     * @param  string  $name
+     * @param string $name
      *
      * @return bool
      */

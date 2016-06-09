@@ -11,9 +11,9 @@
 
 namespace Tymon\JWTAuth\Claims;
 
-use JsonSerializable;
-use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
+use JsonSerializable;
 use Tymon\JWTAuth\Contracts\Claim as ClaimContract;
 use Tymon\JWTAuth\Exceptions\InvalidClaimException;
 
@@ -34,7 +34,7 @@ abstract class Claim implements Arrayable, ClaimContract, Jsonable, JsonSerializ
     private $value;
 
     /**
-     * @param  mixed  $value
+     * @param mixed $value
      *
      * @return void
      */
@@ -46,7 +46,7 @@ abstract class Claim implements Arrayable, ClaimContract, Jsonable, JsonSerializ
     /**
      * Set the claim value, and call a validate method.
      *
-     * @param  mixed  $value
+     * @param mixed $value
      *
      * @throws \Tymon\JWTAuth\Exceptions\InvalidClaimException
      *
@@ -54,7 +54,7 @@ abstract class Claim implements Arrayable, ClaimContract, Jsonable, JsonSerializ
      */
     public function setValue($value)
     {
-        if (! $this->validate($value)) {
+        if (!$this->validate($value)) {
             throw new InvalidClaimException('Invalid value provided for claim "'.$this->getName().'": '.$value);
         }
 
@@ -76,7 +76,7 @@ abstract class Claim implements Arrayable, ClaimContract, Jsonable, JsonSerializ
     /**
      * Set the claim name.
      *
-     * @param  string  $name
+     * @param string $name
      *
      * @return $this
      */
@@ -100,7 +100,7 @@ abstract class Claim implements Arrayable, ClaimContract, Jsonable, JsonSerializ
     /**
      * Validate the Claim value.
      *
-     * @param  mixed  $value
+     * @param mixed $value
      *
      * @return bool
      */
@@ -132,7 +132,7 @@ abstract class Claim implements Arrayable, ClaimContract, Jsonable, JsonSerializ
     /**
      * Get the claim as JSON.
      *
-     * @param  int  $options
+     * @param int $options
      *
      * @return string
      */

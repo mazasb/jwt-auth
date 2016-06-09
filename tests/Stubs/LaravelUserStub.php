@@ -11,8 +11,8 @@
 
 namespace Tymon\JWTAuth\Test\Stubs;
 
-use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class LaravelUserStub implements Authenticatable, JWTSubject
 {
@@ -24,7 +24,7 @@ class LaravelUserStub implements Authenticatable, JWTSubject
     public function getJWTCustomClaims()
     {
         return [
-            'foo' => 'bar',
+            'foo'  => 'bar',
             'role' => 'admin',
         ];
     }

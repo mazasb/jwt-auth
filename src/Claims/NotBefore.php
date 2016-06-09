@@ -25,7 +25,7 @@ class NotBefore extends Claim
     /**
      * Validate the claim.
      *
-     * @param  mixed  $value
+     * @param mixed $value
      *
      * @return bool
      */

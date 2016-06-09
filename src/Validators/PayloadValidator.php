@@ -11,9 +11,9 @@
 
 namespace Tymon\JWTAuth\Validators;
 
-use Tymon\JWTAuth\Support\Utils;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use Tymon\JWTAuth\Support\Utils;
 
 class PayloadValidator extends Validator
 {
@@ -30,7 +30,7 @@ class PayloadValidator extends Validator
     /**
      * Run the validations on the payload array.
      *
-     * @param  array  $value
+     * @param array $value
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class PayloadValidator extends Validator
     {
         $this->validateStructure($value);
 
-        if (! $this->refreshFlow) {
+        if (!$this->refreshFlow) {
             $this->validateTimestamps($value);
         } else {
             $this->validateRefresh($value);
@@ -49,7 +49,7 @@ class PayloadValidator extends Validator
      * Ensure the payload contains the required claims and
      * the claims have the relevant type.
      *
-     * @param  array  $payload
+     * @param array $payload
      *
      * @throws \Tymon\JWTAuth\Exceptions\TokenInvalidException
      *
@@ -67,7 +67,7 @@ class PayloadValidator extends Validator
     /**
      * Validate the payload timestamps.
      *
-     * @param  array  $payload
+     * @param array $payload
      *
      * @throws \Tymon\JWTAuth\Exceptions\TokenExpiredException
      * @throws \Tymon\JWTAuth\Exceptions\TokenInvalidException
@@ -94,7 +94,7 @@ class PayloadValidator extends Validator
     /**
      * Check the token in the refresh flow context.
      *
-     * @param  array  $payload
+     * @param array $payload
      *
      * @throws \Tymon\JWTAuth\Exceptions\TokenExpiredException
      *
@@ -116,7 +116,7 @@ class PayloadValidator extends Validator
     /**
      * Set the required claims.
      *
-     * @param  array  $claims
+     * @param array $claims
      *
      * @return $this
      */
@@ -130,7 +130,7 @@ class PayloadValidator extends Validator
     /**
      * Set the refresh ttl.
      *
-     * @param  int  $ttl
+     * @param int $ttl
      *
      * @return $this
      */

@@ -13,10 +13,10 @@ namespace Tymon\JWTAuth;
 
 use BadMethodCallException;
 use Symfony\Component\HttpFoundation\Request;
-use Tymon\JWTAuth\Http\Parser\Parser;
-use Tymon\JWTAuth\Support\CustomClaims;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use Tymon\JWTAuth\Http\Parser\Parser;
+use Tymon\JWTAuth\Support\CustomClaims;
 
 class JWT
 {
@@ -38,8 +38,8 @@ class JWT
     protected $token;
 
     /**
-     * @param  \Tymon\JWTAuth\Manager  $manager
-     * @param  \Tymon\JWTAuth\Http\Parser\Parser  $parser
+     * @param \Tymon\JWTAuth\Manager            $manager
+     * @param \Tymon\JWTAuth\Http\Parser\Parser $parser
      *
      * @return void
      */
@@ -52,7 +52,7 @@ class JWT
     /**
      * Generate a token using the user identifier as the subject claim.
      *
-     * @param  \Tymon\JWTAuth\Contracts\JWTSubject  $user
+     * @param \Tymon\JWTAuth\Contracts\JWTSubject $user
      *
      * @return string
      */
@@ -78,7 +78,7 @@ class JWT
     /**
      * Invalidate a token (add it to the blacklist).
      *
-     * @param  bool  $forceForever
+     * @param bool $forceForever
      *
      * @return bool
      */
@@ -125,7 +125,7 @@ class JWT
      */
     public function getToken()
     {
-        if (! $this->token) {
+        if (!$this->token) {
             try {
                 $this->parseToken();
             } catch (JWTException $e) {
@@ -145,7 +145,7 @@ class JWT
      */
     public function parseToken()
     {
-        if (! $token = $this->parser->parseToken()) {
+        if (!$token = $this->parser->parseToken()) {
             throw new JWTException('The token could not be parsed from the request');
         }
 
@@ -177,7 +177,7 @@ class JWT
     /**
      * Create a Payload instance.
      *
-     * @param  \Tymon\JWTAuth\Contracts\JWTSubject  $user
+     * @param \Tymon\JWTAuth\Contracts\JWTSubject $user
      *
      * @return \Tymon\JWTAuth\Payload
      */
@@ -189,7 +189,7 @@ class JWT
     /**
      * Build the claims array and return it.
      *
-     * @param  \Tymon\JWTAuth\Contracts\JWTSubject  $user
+     * @param \Tymon\JWTAuth\Contracts\JWTSubject $user
      *
      * @return array
      */
@@ -205,7 +205,7 @@ class JWT
     /**
      * Set the token.
      *
-     * @param  \Tymon\JWTAuth\Token|string  $token
+     * @param \Tymon\JWTAuth\Token|string $token
      *
      * @return $this
      */
@@ -237,7 +237,7 @@ class JWT
      */
     protected function requireToken()
     {
-        if (! $this->token) {
+        if (!$this->token) {
             throw new JWTException('A token is required');
         }
     }
@@ -245,7 +245,7 @@ class JWT
     /**
      * Set the request instance.
      *
-     * @param  \Symfony\Component\HttpFoundation\Request  $request
+     * @param \Symfony\Component\HttpFoundation\Request $request
      *
      * @return $this
      */
@@ -299,8 +299,8 @@ class JWT
     /**
      * Magically call the JWT Manager.
      *
-     * @param  string  $method
-     * @param  array  $parameters
+     * @param string $method
+     * @param array  $parameters
      *
      * @throws \BadMethodCallException
      *
