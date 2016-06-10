@@ -3,11 +3,9 @@
  * Created by PhpStorm.
  * User: gajdacsn
  * Date: 2016. 06. 10.
- * Time: 8:35
+ * Time: 8:35.
  */
-
 namespace Tymon\JWTAuth\Test\Unit;
-
 
 use Symfony\Component\HttpFoundation\Request;
 use Tymon\JWTAuth\Http\Parser\AuthHeaders;
@@ -21,7 +19,7 @@ class AuthHeadersTest extends \PHPUnit_Framework_TestCase
     {
         // Arrange
         $request = Request::create('foo', 'POST');
-        $request->headers->set('Authorization', "bearer " . $value);
+        $request->headers->set('Authorization', 'bearer '.$value);
         $authHeaders = new AuthHeaders();
 
         // Act
@@ -30,6 +28,7 @@ class AuthHeadersTest extends \PHPUnit_Framework_TestCase
         // Assert
         $this->assertEquals($value, $actual);
     }
+
     /**
      * @dataProvider header_value_dataProvider
      */
@@ -50,10 +49,9 @@ class AuthHeadersTest extends \PHPUnit_Framework_TestCase
     public function header_value_dataProvider()
     {
         return [
-            ["onebearer.two.three"],
-            ["one.bearertwo.three"],
-            ["one.two.bearerthree"]
+            ['onebearer.two.three'],
+            ['one.bearertwo.three'],
+            ['one.two.bearerthree'],
         ];
     }
-
 }
