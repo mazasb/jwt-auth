@@ -4,5 +4,6 @@ enabled:
   - phpdoc_order
   - phpdoc_separation
   - unalign_double_arrow
+  - concat_with_spaces
 
 linting: true
