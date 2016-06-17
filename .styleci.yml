@@ -6,4 +6,7 @@ enabled:
   - unalign_double_arrow
   - concat_with_spaces
 
+disabled:
+  - concat_without_spaces
+
 linting: true
