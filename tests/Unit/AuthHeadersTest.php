@@ -18,7 +18,7 @@ class AuthHeadersTest extends \PHPUnit_Framework_TestCase
     public function test_parse_remove_bearer_only_at_the_beginning_of_the_value($value)
     {
         // Arrange
-        $header = [ 'Authorization' => [ 'bearer' . $value] ];
+        $header = ['Authorization' => ['bearer' . $value]];
         $request = new Request();
         $request->headers->replace($header);
         $authHeaders = new AuthHeaders();
@@ -33,14 +33,14 @@ class AuthHeadersTest extends \PHPUnit_Framework_TestCase
     public function test_parse_trim_whitespaces()
     {
         // Arrange
-        $header = [ 'Authorization' => [ 'bearer' . ' ' . 'one.two.three' . ' '] ];
+        $header = ['Authorization' => ['bearer' . ' ' . 'one.two.three' . ' ']];
         $request = new Request();
         $request->headers->replace($header);
 
         $authHeaders = new AuthHeaders();
         // Act
         $actual = $authHeaders->parse($request);
-        
+
         // Assert
         $this->assertEquals('one.two.three', $actual);
     }
@@ -51,7 +51,7 @@ class AuthHeadersTest extends \PHPUnit_Framework_TestCase
     public function test_parse_bearer_is_missing_should_return_null($value)
     {
         // Arrange
-        $header = [ 'Authorization' => [ $value ] ];
+        $header = ['Authorization' => [$value]];
         $request = new Request();
         $request->headers->replace($header);
         $authHeaders = new AuthHeaders();
@@ -69,7 +69,7 @@ class AuthHeadersTest extends \PHPUnit_Framework_TestCase
     public function test_parse_remove_bearer_in_any_type_of_cases($value)
     {
         // Arrange
-        $header = [ 'Authorization' => [ $value . ' one.two.three' ] ];
+        $header = ['Authorization' => [$value . ' one.two.three']];
         $request = new Request();
         $request->headers->replace($header);
         $authHeaders = new AuthHeaders();
@@ -104,8 +104,7 @@ class AuthHeadersTest extends \PHPUnit_Framework_TestCase
             ['Bearer'],
             ['beareR'],
             ['BeArEr'],
-            ['bEaReR']
+            ['bEaReR'],
         ];
     }
-
 }

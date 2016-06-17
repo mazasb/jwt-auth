@@ -58,7 +58,7 @@ class Namshi extends Provider implements JWT
 
             return (string) $this->jws->getTokenString();
         } catch (Exception $e) {
-            throw new JWTException('Could not create token: '.$e->getMessage(), $e->getCode(), $e);
+            throw new JWTException('Could not create token: ' . $e->getMessage(), $e->getCode(), $e);
         }
     }
 
@@ -77,7 +77,7 @@ class Namshi extends Provider implements JWT
             // Let's never allow insecure tokens
             $jws = $this->jws->load($token, false);
         } catch (InvalidArgumentException $e) {
-            throw new TokenInvalidException('Could not decode token: '.$e->getMessage(), $e->getCode(), $e);
+            throw new TokenInvalidException('Could not decode token: ' . $e->getMessage(), $e->getCode(), $e);
         }
 
         if (! $jws->verify($this->getVerificationKey(), $this->getAlgo())) {
