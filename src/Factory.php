@@ -167,7 +167,7 @@ class Factory
      */
     public function iss()
     {
-        return $this->request->getSchemeAndHttpHost().$this->request->getBaseUrl().$this->request->getPathInfo();
+        return $this->request->getSchemeAndHttpHost() . $this->request->getBaseUrl() . $this->request->getPathInfo();
     }
 
     /**

@@ -159,11 +159,11 @@ class NamshiTest extends AbstractTestCase
 
     public function getDummyPrivateKey()
     {
-        return file_get_contents(__DIR__.'/../Keys/id_rsa');
+        return file_get_contents(__DIR__ . '/../Keys/id_rsa');
     }
 
     public function getDummyPublicKey()
     {
-        return file_get_contents(__DIR__.'/../Keys/id_rsa.pub');
+        return file_get_contents(__DIR__ . '/../Keys/id_rsa.pub');
     }
 }
